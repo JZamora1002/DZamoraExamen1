@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DZamoraExamenCrudSqlClientModelStoreContainer" CdmEntityContainer="DZamoraExamenCrudSqlClientEntities">
+    <EntitySetMapping Name="Autor">
+      <EntityTypeMapping TypeName="DZamoraExamenCrudSqlClientModel.Autor">
+        <MappingFragment StoreEntitySet="Autor">
+          <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Editorial">
+      <EntityTypeMapping TypeName="DZamoraExamenCrudSqlClientModel.Editorial">
+        <MappingFragment StoreEntitySet="Editorial">
+          <ScalarProperty Name="IdEditorial" ColumnName="IdEditorial" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genero">
+      <EntityTypeMapping TypeName="DZamoraExamenCrudSqlClientModel.Genero">
+        <MappingFragment StoreEntitySet="Genero">
+          <ScalarProperty Name="IdGenero" ColumnName="IdGenero" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Libro">
+      <EntityTypeMapping TypeName="DZamoraExamenCrudSqlClientModel.Libro">
+        <MappingFragment StoreEntitySet="Libro">
+          <ScalarProperty Name="IdLibro" ColumnName="IdLibro" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+          <ScalarProperty Name="NumeroPaginas" ColumnName="NumeroPaginas" />
+          <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+          <ScalarProperty Name="IdEditorial" ColumnName="IdEditorial" />
+          <ScalarProperty Name="Edicion" ColumnName="Edicion" />
+          <ScalarProperty Name="IdGenero" ColumnName="IdGenero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AutorGetAll" FunctionName="DZamoraExamenCrudSqlClientModel.Store.AutorGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DZamoraExamenCrudSqlClientModel.AutorGetAll_Result">
+          <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="EditorialGetAll" FunctionName="DZamoraExamenCrudSqlClientModel.Store.EditorialGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DZamoraExamenCrudSqlClientModel.EditorialGetAll_Result">
+          <ScalarProperty Name="IdEditorial" ColumnName="IdEditorial" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GeneroGetAll" FunctionName="DZamoraExamenCrudSqlClientModel.Store.GeneroGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DZamoraExamenCrudSqlClientModel.GeneroGetAll_Result">
+          <ScalarProperty Name="IdGenero" ColumnName="IdGenero" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LibroAdd" FunctionName="DZamoraExamenCrudSqlClientModel.Store.LibroAdd" />
+    <FunctionImportMapping FunctionImportName="LibroDelete" FunctionName="DZamoraExamenCrudSqlClientModel.Store.LibroDelete" />
+    <FunctionImportMapping FunctionImportName="LibroUpdate" FunctionName="DZamoraExamenCrudSqlClientModel.Store.LibroUpdate" />
+    <FunctionImportMapping FunctionImportName="LibroGetAll" FunctionName="DZamoraExamenCrudSqlClientModel.Store.LibroGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DZamoraExamenCrudSqlClientModel.LibroGetAll_Result">
+          <ScalarProperty Name="IdLibro" ColumnName="IdLibro" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+          <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+          <ScalarProperty Name="NumeroPaginas" ColumnName="NumeroPaginas" />
+          <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+          <ScalarProperty Name="IdEditorial" ColumnName="IdEditorial" />
+          <ScalarProperty Name="NombreEditorial" ColumnName="NombreEditorial" />
+          <ScalarProperty Name="Edicion" ColumnName="Edicion" />
+          <ScalarProperty Name="IdGenero" ColumnName="IdGenero" />
+          <ScalarProperty Name="NombreGenero" ColumnName="NombreGenero" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LibroGetById" FunctionName="DZamoraExamenCrudSqlClientModel.Store.LibroGetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DZamoraExamenCrudSqlClientModel.LibroGetById_Result">
+          <ScalarProperty Name="IdLibro" ColumnName="IdLibro" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+          <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+          <ScalarProperty Name="NumeroPaginas" ColumnName="NumeroPaginas" />
+          <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+          <ScalarProperty Name="IdEditorial" ColumnName="IdEditorial" />
+          <ScalarProperty Name="NombreEditorial" ColumnName="NombreEditorial" />
+          <ScalarProperty Name="Edicion" ColumnName="Edicion" />
+          <ScalarProperty Name="IdGenero" ColumnName="IdGenero" />
+          <ScalarProperty Name="NombreGenero" ColumnName="NombreGenero" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DZamoraExamenCrudSqlClientModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Autor">
+    <Key>
+      <PropertyRef Name="IdAutor" />
+    </Key>
+    <Property Name="IdAutor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Editorial">
+    <Key>
+      <PropertyRef Name="IdEditorial" />
+    </Key>
+    <Property Name="IdEditorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Genero">
+    <Key>
+      <PropertyRef Name="IdGenero" />
+    </Key>
+    <Property Name="IdGenero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Libro">
+    <Key>
+      <PropertyRef Name="IdLibro" />
+    </Key>
+    <Property Name="IdLibro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="IdAutor" Type="int" />
+    <Property Name="NumeroPaginas" Type="int" />
+    <Property Name="FechaPublicacion" Type="date" />
+    <Property Name="IdEditorial" Type="int" />
+    <Property Name="Edicion" Type="varchar" MaxLength="50" />
+    <Property Name="IdGenero" Type="int" />
+  </EntityType>
+  <Association Name="FK__Libro__IdAutor__2A4B4B5E">
+    <End Role="Autor" Type="Self.Autor" Multiplicity="0..1" />
+    <End Role="Libro" Type="Self.Libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Autor">
+        <PropertyRef Name="IdAutor" />
+      </Principal>
+      <Dependent Role="Libro">
+        <PropertyRef Name="IdAutor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Libro__IdEditori__2B3F6F97">
+    <End Role="Editorial" Type="Self.Editorial" Multiplicity="0..1" />
+    <End Role="Libro" Type="Self.Libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Editorial">
+        <PropertyRef Name="IdEditorial" />
+      </Principal>
+      <Dependent Role="Libro">
+        <PropertyRef Name="IdEditorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Libro__IdGenero__2C3393D0">
+    <End Role="Genero" Type="Self.Genero" Multiplicity="0..1" />
+    <End Role="Libro" Type="Self.Libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genero">
+        <PropertyRef Name="IdGenero" />
+      </Principal>
+      <Dependent Role="Libro">
+        <PropertyRef Name="IdGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AutorGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="EditorialGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GeneroGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LibroAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="IdAutor" Type="int" Mode="In" />
+    <Parameter Name="NumeroPaginas" Type="int" Mode="In" />
+    <Parameter Name="FechaPublicacion" Type="date" Mode="In" />
+    <Parameter Name="IdEditorial" Type="int" Mode="In" />
+    <Parameter Name="Edicion" Type="varchar" Mode="In" />
+    <Parameter Name="IdGenero" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LibroDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdLibro" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LibroGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LibroGetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdLibro" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LibroUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdLibro" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="IdAutor" Type="int" Mode="In" />
+    <Parameter Name="NumeroPaginas" Type="int" Mode="In" />
+    <Parameter Name="FechaPublicacion" Type="date" Mode="In" />
+    <Parameter Name="IdEditorial" Type="int" Mode="In" />
+    <Parameter Name="Edicion" Type="varchar" Mode="In" />
+    <Parameter Name="IdGenero" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="DZamoraExamenCrudSqlClientModelStoreContainer">
+    <EntitySet Name="Autor" EntityType="Self.Autor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Editorial" EntityType="Self.Editorial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genero" EntityType="Self.Genero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Libro" EntityType="Self.Libro" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Libro__IdAutor__2A4B4B5E" Association="Self.FK__Libro__IdAutor__2A4B4B5E">
+      <End Role="Autor" EntitySet="Autor" />
+      <End Role="Libro" EntitySet="Libro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Libro__IdEditori__2B3F6F97" Association="Self.FK__Libro__IdEditori__2B3F6F97">
+      <End Role="Editorial" EntitySet="Editorial" />
+      <End Role="Libro" EntitySet="Libro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Libro__IdGenero__2C3393D0" Association="Self.FK__Libro__IdGenero__2C3393D0">
+      <End Role="Genero" EntitySet="Genero" />
+      <End Role="Libro" EntitySet="Libro" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
