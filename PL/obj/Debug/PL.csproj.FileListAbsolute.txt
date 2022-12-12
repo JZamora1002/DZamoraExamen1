@@ -1,0 +1,3 @@
+C:\Users\finaa\Documents\Proyecto Trabajo\DZamoraExamen\PL\obj\Debug\PL.csproj.AssemblyReference.cache
+C:\Users\finaa\Documents\Proyecto Trabajo\DZamoraExamen\PL\obj\Debug\PL.csproj.SuggestedBindingRedirects.cache
+C:\Users\finaa\Documents\Proyecto Trabajo\DZamoraExamen\PL\obj\Debug\PL.csproj.CoreCompileInputs.cache
